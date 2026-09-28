@@ -1,0 +1,34 @@
+<div class="list-container">
+  <div class="list-header">
+    <h1>Mis Talleres</h1>
+    <button class="btn btn-primary" (click)="onCreateNew()">
+      + Agregar Nuevo Taller
+    </button>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    Cargando talleres...
+  </div>
+
+  <div *ngIf="error" class="error">
+    {{ error }}
+  </div>
+
+  <div *ngIf="!loading && !error">
+    <div *ngIf="talleres.length === 0" class="empty-state">
+      <p>No hay talleres registrados</p>
+      <button class="btn btn-primary" (click)="onCreateNew()">
+        + Agregar Primer Taller
+      </button>
+    </div>
+
+    <div *ngIf="talleres.length > 0" class="talleres-list">
+      <app-taller-item
+        *ngFor="let taller of talleres"
+        [taller]="taller"
+        (onEdit)="onEdit($event)"
+        (onDelete)="onDelete($event)"
+      ></app-taller-item>
+    </div>
+  </div>
+</div>

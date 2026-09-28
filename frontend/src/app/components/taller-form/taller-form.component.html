@@ -1,0 +1,57 @@
+<div class="form-container">
+  <h2>{{ isEditMode ? 'Editar Taller' : 'Nuevo Taller' }}</h2>
+  
+  <form [formGroup]="tallerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="propietario">Propietario *</label>
+      <input
+        type="text"
+        id="propietario"
+        formControlName="propietario"
+        class="form-control"
+        placeholder="Nombre del propietario"
+      />
+      <div *ngIf="submitted && f['propietario'].errors" class="error-message">
+        <div *ngIf="f['propietario'].errors['required']">El propietario es obligatorio</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="direccion">Dirección *</label>
+      <input
+        type="text"
+        id="direccion"
+        formControlName="direccion"
+        class="form-control"
+        placeholder="Dirección del taller"
+      />
+      <div *ngIf="submitted && f['direccion'].errors" class="error-message">
+        <div *ngIf="f['direccion'].errors['required']">La dirección es obligatoria</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="linkGoogleMaps">Link de Google Maps *</label>
+      <input
+        type="url"
+        id="linkGoogleMaps"
+        formControlName="linkGoogleMaps"
+        class="form-control"
+        placeholder="https://maps.google.com/..."
+      />
+      <div *ngIf="submitted && f['linkGoogleMaps'].errors" class="error-message">
+        <div *ngIf="f['linkGoogleMaps'].errors['required']">El link es obligatorio</div>
+        <div *ngIf="f['linkGoogleMaps'].errors['pattern']">El link debe ser una URL válida (http o https)</div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary" [disabled]="submitted && tallerForm.invalid">
+        {{ isEditMode ? 'Actualizar' : 'Crear' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">
+        Cancelar
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,17 @@
+<div class="taller-card">
+  <div class="taller-info">
+    <h3 class="taller-propietario">{{ taller.propietario }}</h3>
+    <p class="taller-direccion">{{ taller.direccion }}</p>
+  </div>
+  <div class="taller-actions">
+    <button class="btn btn-maps" (click)="openGoogleMaps()" title="Ver en Google Maps">
+      📍 Google Maps
+    </button>
+    <button class="btn btn-edit" (click)="editTaller()" title="Editar">
+      ✏️ Editar
+    </button>
+    <button class="btn btn-delete" (click)="deleteTaller()" title="Eliminar">
+      🗑️ Eliminar
+    </button>
+  </div>
+</div>
