@@ -1,9 +1,10 @@
 services:
   - type: web
     name: mis-talleres-backend
-    runtime: java
-    buildCommand: cd backend && mvn clean package -DskipTests
-    startCommand: cd backend && java -jar target/mis-talleres-backend-1.0.0.jar
+    env: docker
+    dockerContext: ./backend
+    dockerfilePath: ./backend/Dockerfile
+    plan: free
     envVars:
       - key: DATABASE_URL
         value: postgresql://mistalleres_user:5UnIHuLWp16i51679WKXrxIMnJhnH21w@dpg-datdiaek1f9s73frqthg-a/mistalleres
