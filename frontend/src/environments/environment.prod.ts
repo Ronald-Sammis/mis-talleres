@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://tu-backend-url-en-render.onrender.com/api/talleres'
+  apiUrl: 'https://mis-talleres.onrender.com/api/talleres'
 };
