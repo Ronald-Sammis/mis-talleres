@@ -2,7 +2,7 @@
   <div class="taller-info">
     <h3 class="taller-propietario">{{ taller.propietario }}</h3>
     <p class="taller-direccion">{{ taller.direccion }}</p>
-    <p class="taller-telefono" *ngIf="taller.telefono">
+    <p class="taller-telefono" *ngIf="taller.telefono && taller.telefono.trim()">
       📞 {{ taller.telefono }}
     </p>
   </div>
