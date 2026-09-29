@@ -1,3 +1,4 @@
+```html
 <div class="form-container">
   <h2>{{ isEditMode ? 'Editar Taller' : 'Nuevo Taller' }}</h2>
   
@@ -14,6 +15,17 @@
       <div *ngIf="submitted && f['propietario'].errors" class="error-message">
         <div *ngIf="f['propietario'].errors['required']">El propietario es obligatorio</div>
       </div>
+    </div>
+
+    <div class="form-group">
+      <label for="telefono">Teléfono</label>
+      <input
+        type="tel"
+        id="telefono"
+        formControlName="telefono"
+        class="form-control"
+        placeholder="Número de teléfono"
+      />
     </div>
 
     <div class="form-group">
@@ -49,9 +61,11 @@
       <button type="submit" class="btn btn-primary" [disabled]="submitted && tallerForm.invalid">
         {{ isEditMode ? 'Actualizar' : 'Crear' }}
       </button>
+
       <button type="button" class="btn btn-secondary" (click)="onCancel()">
         Cancelar
       </button>
     </div>
   </form>
 </div>
+```
