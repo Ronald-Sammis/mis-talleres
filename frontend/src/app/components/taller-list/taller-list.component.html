@@ -1,11 +1,52 @@
 <div class="list-container">
   <div class="institutional-header">
-    <div class="header-content">
+    <div class="header-content" *ngIf="!searchOpen">
       <div class="header-icon">🏭</div>
       <div class="header-text">
         <h1>Mis Talleres</h1>
         <p class="header-subtitle">Sistema de Gestión de Talleres</p>
       </div>
+      <button
+        type="button"
+        class="search-toggle"
+        (click)="openSearch()"
+        title="Buscar"
+        aria-label="Buscar taller"
+      >
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="header-search" *ngIf="searchOpen">
+      <button
+        type="button"
+        class="search-back"
+        (click)="closeSearch()"
+        title="Cerrar búsqueda"
+        aria-label="Cerrar búsqueda"
+      >
+        ←
+      </button>
+      <input
+        #searchInput
+        type="text"
+        class="search-input"
+        [(ngModel)]="searchQuery"
+        placeholder="Buscar taller..."
+        autocomplete="off"
+      />
+      <button
+        *ngIf="searchQuery"
+        type="button"
+        class="search-clear"
+        (click)="clearSearch()"
+        title="Limpiar"
+        aria-label="Limpiar búsqueda"
+      >
+        ✕
+      </button>
     </div>
   </div>
 
@@ -28,9 +69,13 @@
       </button>
     </div>
 
-    <div *ngIf="talleres.length > 0" class="talleres-list">
+    <div *ngIf="talleres.length > 0 && talleresFiltrados.length === 0" class="search-empty">
+      <p>No se encontraron talleres</p>
+    </div>
+
+    <div *ngIf="talleres.length > 0 && talleresFiltrados.length > 0" class="talleres-list">
       <app-taller-item
-        *ngFor="let taller of talleres"
+        *ngFor="let taller of talleresFiltrados"
         [taller]="taller"
         (onEdit)="onEdit($event)"
         (onDelete)="onDelete($event)"
