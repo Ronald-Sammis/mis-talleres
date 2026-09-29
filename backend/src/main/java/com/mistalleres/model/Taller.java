@@ -15,6 +15,8 @@ public class Taller {
     @NotBlank(message = "El propietario es obligatorio")
     private String propietario;
 
+    private String telefono;
+
     @NotBlank(message = "La dirección es obligatoria")
     private String direccion;
 
@@ -25,8 +27,9 @@ public class Taller {
     public Taller() {
     }
 
-    public Taller(String propietario, String direccion, String linkGoogleMaps) {
+    public Taller(String propietario, String telefono, String direccion, String linkGoogleMaps) {
         this.propietario = propietario;
+        this.telefono = telefono;
         this.direccion = direccion;
         this.linkGoogleMaps = linkGoogleMaps;
     }
@@ -45,6 +48,14 @@ public class Taller {
 
     public void setPropietario(String propietario) {
         this.propietario = propietario;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getDireccion() {

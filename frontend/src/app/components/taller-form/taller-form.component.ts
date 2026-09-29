@@ -25,6 +25,7 @@ export class TallerFormComponent implements OnInit {
   ngOnInit(): void {
     this.tallerForm = this.fb.group({
       propietario: ['', [Validators.required]],
+      telefono: [''],
       direccion: ['', [Validators.required]],
       linkGoogleMaps: ['', [Validators.required, Validators.pattern('^https?://.*')]]
     });

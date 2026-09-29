@@ -2,6 +2,9 @@
   <div class="taller-info">
     <h3 class="taller-propietario">{{ taller.propietario }}</h3>
     <p class="taller-direccion">{{ taller.direccion }}</p>
+    <p class="taller-telefono" *ngIf="taller.telefono">
+      📞 {{ taller.telefono }}
+    </p>
   </div>
   <div class="taller-actions">
     <button class="btn btn-maps" (click)="openGoogleMaps()" title="Ver en Google Maps">
