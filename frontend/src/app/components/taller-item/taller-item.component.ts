@@ -24,4 +24,11 @@ export class TallerItemComponent {
   openGoogleMaps() {
     window.open(this.taller.linkGoogleMaps, '_blank');
   }
+
+  getAvatarInitial(nombre: string): string {
+    if (!nombre) return '?';
+    const trimmed = nombre.trim();
+    if (!trimmed) return '?';
+    return trimmed.charAt(0).toUpperCase();
+  }
 }
