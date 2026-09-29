@@ -1,55 +1,81 @@
 <div class="form-container">
-  <h2>{{ isEditMode ? 'Editar Taller' : 'Nuevo Taller' }}</h2>
+  <div class="form-header">
+    <div class="form-icon">🏭</div>
+    <h2>{{ isEditMode ? 'Editar Taller' : 'Nuevo Taller' }}</h2>
+  </div>
   
   <form [formGroup]="tallerForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="propietario">Propietario *</label>
-      <input
-        type="text"
-        id="propietario"
-        formControlName="propietario"
-        class="form-control"
-        placeholder="Nombre del propietario"
-      />
+      <label for="propietario">
+        <span class="label-text">Propietario</span>
+        <span class="required">*</span>
+      </label>
+      <div class="input-wrapper">
+        <span class="input-icon">👤</span>
+        <input
+          type="text"
+          id="propietario"
+          formControlName="propietario"
+          class="form-control"
+          placeholder="Nombre del propietario"
+        />
+      </div>
       <div *ngIf="submitted && f['propietario'].errors" class="error-message">
         <div *ngIf="f['propietario'].errors['required']">El propietario es obligatorio</div>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="telefono">Teléfono</label>
-      <input
-        type="tel"
-        id="telefono"
-        formControlName="telefono"
-        class="form-control"
-        placeholder="Número de teléfono"
-      />
+      <label for="telefono">
+        <span class="label-text">Teléfono</span>
+      </label>
+      <div class="input-wrapper">
+        <span class="input-icon">📞</span>
+        <input
+          type="tel"
+          id="telefono"
+          formControlName="telefono"
+          class="form-control"
+          placeholder="Número de teléfono"
+        />
+      </div>
     </div>
 
     <div class="form-group">
-      <label for="direccion">Dirección *</label>
-      <input
-        type="text"
-        id="direccion"
-        formControlName="direccion"
-        class="form-control"
-        placeholder="Dirección del taller"
-      />
+      <label for="direccion">
+        <span class="label-text">Dirección</span>
+        <span class="required">*</span>
+      </label>
+      <div class="input-wrapper">
+        <span class="input-icon">📍</span>
+        <input
+          type="text"
+          id="direccion"
+          formControlName="direccion"
+          class="form-control"
+          placeholder="Dirección del taller"
+        />
+      </div>
       <div *ngIf="submitted && f['direccion'].errors" class="error-message">
         <div *ngIf="f['direccion'].errors['required']">La dirección es obligatoria</div>
       </div>
     </div>
 
     <div class="form-group">
-      <label for="linkGoogleMaps">Link de Google Maps *</label>
-      <input
-        type="url"
-        id="linkGoogleMaps"
-        formControlName="linkGoogleMaps"
-        class="form-control"
-        placeholder="https://maps.google.com/..."
-      />
+      <label for="linkGoogleMaps">
+        <span class="label-text">Link de Google Maps</span>
+        <span class="required">*</span>
+      </label>
+      <div class="input-wrapper">
+        <span class="input-icon">🗺️</span>
+        <input
+          type="url"
+          id="linkGoogleMaps"
+          formControlName="linkGoogleMaps"
+          class="form-control"
+          placeholder="https://maps.google.com/..."
+        />
+      </div>
       <div *ngIf="submitted && f['linkGoogleMaps'].errors" class="error-message">
         <div *ngIf="f['linkGoogleMaps'].errors['required']">El link es obligatorio</div>
         <div *ngIf="f['linkGoogleMaps'].errors['pattern']">El link debe ser una URL válida (http o https)</div>
@@ -58,11 +84,13 @@
 
     <div class="form-actions">
       <button type="submit" class="btn btn-primary" [disabled]="submitted && tallerForm.invalid">
-        {{ isEditMode ? 'Actualizar' : 'Crear' }}
+        <span class="btn-icon">{{ isEditMode ? '✏️' : '➕' }}</span>
+        <span class="btn-text">{{ isEditMode ? 'Actualizar' : 'Crear' }}</span>
       </button>
 
       <button type="button" class="btn btn-secondary" (click)="onCancel()">
-        Cancelar
+        <span class="btn-icon">✕</span>
+        <span class="btn-text">Cancelar</span>
       </button>
     </div>
   </form>

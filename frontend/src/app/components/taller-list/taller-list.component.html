@@ -1,13 +1,11 @@
 <div class="list-container">
   <div class="list-header">
     <h1>Mis Talleres</h1>
-    <button class="btn btn-primary" (click)="onCreateNew()">
-      + Agregar Nuevo Taller
-    </button>
   </div>
 
   <div *ngIf="loading" class="loading">
-    Cargando talleres...
+    <div class="loading-spinner"></div>
+    <p>Cargando talleres...</p>
   </div>
 
   <div *ngIf="error" class="error">
@@ -16,8 +14,10 @@
 
   <div *ngIf="!loading && !error">
     <div *ngIf="talleres.length === 0" class="empty-state">
-      <p>No hay talleres registrados</p>
-      <button class="btn btn-primary" (click)="onCreateNew()">
+      <div class="empty-icon">🏭</div>
+      <h2>No hay talleres registrados</h2>
+      <p>Comienza agregando tu primer taller</p>
+      <button class="btn btn-primary empty-btn" (click)="onCreateNew()">
         + Agregar Primer Taller
       </button>
     </div>
@@ -31,4 +31,9 @@
       ></app-taller-item>
     </div>
   </div>
+
+  <!-- Floating Action Button (FAB) -->
+  <button class="fab" (click)="onCreateNew()" title="Agregar Nuevo Taller">
+    <span class="fab-icon">+</span>
+  </button>
 </div>

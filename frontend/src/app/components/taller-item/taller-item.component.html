@@ -1,20 +1,39 @@
 <div class="taller-card">
-  <div class="taller-info">
-    <h3 class="taller-propietario">{{ taller.propietario }}</h3>
-    <p class="taller-direccion">{{ taller.direccion }}</p>
-    <p class="taller-telefono" *ngIf="taller.telefono && taller.telefono.trim()">
-      📞 {{ taller.telefono }}
-    </p>
+  <div class="taller-header">
+    <div class="taller-avatar">
+      <span class="avatar-initial">{{ taller.propietario.charAt(0).toUpperCase() }}</span>
+    </div>
+    <div class="taller-title">
+      <h3 class="taller-propietario">{{ taller.propietario }}</h3>
+      <p class="taller-direccion">{{ taller.direccion }}</p>
+    </div>
   </div>
+  
+  <div class="taller-body">
+    <div class="taller-contact" *ngIf="taller.telefono && taller.telefono.trim()">
+      <span class="contact-icon">📞</span>
+      <span class="contact-text">{{ taller.telefono }}</span>
+    </div>
+  </div>
+  
   <div class="taller-actions">
-    <button class="btn btn-maps" (click)="openGoogleMaps()" title="Ver en Google Maps">
-      📍
+    <button class="action-btn btn-maps" (click)="openGoogleMaps()" title="Ver en Google Maps">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+        <circle cx="12" cy="10" r="3"></circle>
+      </svg>
     </button>
-    <button class="btn btn-edit" (click)="editTaller()" title="Editar">
-      ✏️
+    <button class="action-btn btn-edit" (click)="editTaller()" title="Editar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+      </svg>
     </button>
-    <button class="btn btn-delete" (click)="deleteTaller()" title="Eliminar">
-      🗑️
+    <button class="action-btn btn-delete" (click)="deleteTaller()" title="Eliminar">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="3 6 5 6 21 6"></polyline>
+        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+      </svg>
     </button>
   </div>
 </div>
