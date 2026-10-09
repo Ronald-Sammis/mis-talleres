@@ -6,6 +6,12 @@
   min-height: 100vh;
 }
 
+.talleres-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
 .institutional-header {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   padding: 2rem;

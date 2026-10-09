@@ -74,12 +74,14 @@
     </div>
 
     <div *ngIf="talleres.length > 0 && talleresFiltrados.length > 0" class="talleres-list">
-      <app-taller-item
-        *ngFor="let taller of talleresFiltrados"
-        [taller]="taller"
-        (onEdit)="onEdit($event)"
-        (onDelete)="onDelete($event)"
-      ></app-taller-item>
+     <app-taller-item
+    *ngFor="let taller of talleresFiltrados"
+    [taller]="taller"
+    [expanded]="taller.id === tallerExpandidoId"
+    (onToggleExpand)="toggleTaller($event)"
+    (onEdit)="onEdit($event)"
+    (onDelete)="onDelete($event)"
+  ></app-taller-item>
     </div>
   </div>
 

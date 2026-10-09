@@ -100,4 +100,13 @@ export class TallerListComponent implements OnInit {
       .replace(/[\u0300-\u036f]/g, '')
       .trim();
   }
+
+
+tallerExpandidoId: number | null = null;
+
+toggleTaller(id: number): void {
+  this.tallerExpandidoId = this.tallerExpandidoId === id ? null : id;
+}
+
+  
 }

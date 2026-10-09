@@ -1,3 +1,4 @@
+
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Taller } from '../../models/taller.model';
 
@@ -8,27 +9,27 @@ import { Taller } from '../../models/taller.model';
 })
 export class TallerItemComponent {
   @Input() taller!: Taller;
+  @Input() expanded = false;
+
+  @Output() onToggleExpand = new EventEmitter<number>();
   @Output() onEdit = new EventEmitter<number>();
   @Output() onDelete = new EventEmitter<number>();
 
-  constructor() { }
+  toggleExpand(): void {
+    this.onToggleExpand.emit(this.taller.id);
+  }
 
-  editTaller() {
+  editTaller(): void {
     this.onEdit.emit(this.taller.id);
   }
 
-  deleteTaller() {
+  deleteTaller(): void {
     this.onDelete.emit(this.taller.id);
   }
 
-  openGoogleMaps() {
-    window.open(this.taller.linkGoogleMaps, '_blank');
-  }
-
-  getAvatarInitial(nombre: string): string {
-    if (!nombre) return '?';
-    const trimmed = nombre.trim();
-    if (!trimmed) return '?';
-    return trimmed.charAt(0).toUpperCase();
+  openGoogleMaps(): void {
+    if (this.taller.linkGoogleMaps) {
+      window.open(this.taller.linkGoogleMaps, '_blank', 'noopener,noreferrer');
+    }
   }
 }

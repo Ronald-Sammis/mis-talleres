@@ -1,39 +1,121 @@
-<div class="taller-card">
-  <div class="taller-header">
-    <div class="taller-avatar">
-      <span class="avatar-initial">{{ getAvatarInitial(taller.propietario) }}</span>
-    </div>
-    <div class="taller-title">
-      <h3 class="taller-propietario">{{ taller.propietario }}</h3>
-      <p class="taller-direccion">{{ taller.direccion }}</p>
-    </div>
-  </div>
-  
-  <div class="taller-body">
-    <div class="taller-contact" *ngIf="taller.telefono && taller.telefono.trim()">
-      <span class="contact-icon">📞</span>
-      <span class="contact-text">{{ taller.telefono }}</span>
-    </div>
-  </div>
-  
-  <div class="taller-actions">
-    <button class="action-btn btn-maps" (click)="openGoogleMaps()" title="Ver en Google Maps">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+<div class="taller-card" [class.expanded]="expanded">
+  <div class="taller-summary">
+    <button
+      type="button"
+      class="summary-toggle"
+      (click)="toggleExpand()"
+      [attr.aria-expanded]="expanded"
+      [attr.aria-label]="(expanded ? 'Contraer ' : 'Desplegar ') + taller.propietario"
+    >
+      <svg
+        class="expand-icon"
+        [class.rotated]="expanded"
+        viewBox="0 0 24 24"
+        width="18"
+        height="18"
+        aria-hidden="true"
+      >
+        <path
+          d="m9 18 6-6-6-6"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+
+      <span class="taller-propietario">{{ taller.propietario }}</span>
+    </button>
+
+    <button
+      type="button"
+      class="action-btn btn-maps"
+      (click)="openGoogleMaps()"
+      title="Ver en Google Maps"
+      aria-label="Ver ubicación en Google Maps"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
         <circle cx="12" cy="10" r="3"></circle>
       </svg>
     </button>
-    <button class="action-btn btn-edit" (click)="editTaller()" title="Editar">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-      </svg>
-    </button>
-    <button class="action-btn btn-delete" (click)="deleteTaller()" title="Eliminar">
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="3 6 5 6 21 6"></polyline>
-        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-      </svg>
-    </button>
+  </div>
+
+  <div class="taller-details" *ngIf="expanded">
+    <div class="detail-item">
+      <span class="detail-label">Dirección</span>
+      <span class="detail-value">{{ taller.direccion }}</span>
+    </div>
+
+    <div
+      class="detail-item"
+      *ngIf="taller.telefono && taller.telefono.trim()"
+    >
+      <span class="detail-label">Teléfono</span>
+      <span class="detail-value">{{ taller.telefono }}</span>
+    </div>
+
+    <div class="taller-actions">
+      <button
+        type="button"
+        class="action-btn btn-edit"
+        (click)="editTaller()"
+        title="Editar taller"
+        aria-label="Editar taller"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+          <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+        </svg>
+      </button>
+
+      <button
+        type="button"
+        class="action-btn btn-delete"
+        (click)="deleteTaller()"
+        title="Eliminar taller"
+        aria-label="Eliminar taller"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <polyline points="3 6 5 6 21 6"></polyline>
+          <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+        </svg>
+      </button>
+    </div>
   </div>
 </div>
