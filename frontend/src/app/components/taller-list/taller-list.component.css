@@ -17,6 +17,7 @@
 .institutional-header {
   background: linear-gradient(135deg, #171719 0%, #302B32 100%);
   padding: 2rem;
+  border-radius: 12px;
   box-shadow: 0 4px 15px rgba(23, 23, 25, 0.18);
   border-bottom: 4px solid #ED86A7;
   margin-bottom: 2rem;
@@ -25,6 +26,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  
 }
 
 .header-content {
