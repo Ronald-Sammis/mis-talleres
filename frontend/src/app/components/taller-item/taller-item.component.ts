@@ -27,9 +27,9 @@ export class TallerItemComponent {
     this.onDelete.emit(this.taller.id);
   }
 
-  openGoogleMaps(): void {
-    if (this.taller.linkGoogleMaps) {
-      window.open(this.taller.linkGoogleMaps, '_blank', 'noopener,noreferrer');
-    }
+ openGoogleMaps(): void {
+  if (this.taller.linkGoogleMaps) {
+    window.location.href = this.taller.linkGoogleMaps;
   }
+}
 }

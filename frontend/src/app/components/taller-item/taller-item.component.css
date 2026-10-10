@@ -2,17 +2,18 @@
 :host {
   display: block;
   width: 100%;
+  font-family: Inter, "Segoe UI", sans-serif;
 }
 
 .taller-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
+  background: #FFFFFF;
+  border: 1px solid #E7E4E0;
   border-bottom: none;
   transition: background-color 0.2s ease;
 }
 
 .talleres-list app-taller-item:last-child .taller-card {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #E7E4E0;
 }
 
 .taller-card:first-child {
@@ -20,7 +21,7 @@
 }
 
 .taller-card:last-child {
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #E7E4E0;
   border-radius: 0 0 8px 8px;
 }
 
@@ -29,7 +30,7 @@
 }
 
 .taller-card.expanded {
-  background: #fff;
+  background: #FDFBFC;
 }
 
 .taller-summary {
@@ -49,20 +50,20 @@
   padding: 0.5rem 0;
   border: none;
   background: transparent;
-  color: #1a1a1a;
+  color: #171719;
   text-align: left;
   cursor: pointer;
 }
 
 .summary-toggle:focus-visible,
 .action-btn:focus-visible {
-  outline: 2px solid #667eea;
+  outline: 2px solid #C9587F;
   outline-offset: 2px;
 }
 
 .expand-icon {
   flex-shrink: 0;
-  color: #6b7280;
+  color: #85838A;
   transition: transform 0.2s ease;
 }
 
@@ -79,7 +80,7 @@
   white-space: nowrap;
   font-size: 0.98rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #171719;
 }
 
 .action-btn {
@@ -98,18 +99,18 @@
 }
 
 .btn-maps {
-  color: #4285f4;
-  border-color: #bfdbfe;
+  color: #4285F4;
+  border-color: #C7DDFB;
 }
 
 .btn-maps:hover {
-  background: #eff6ff;
-  border-color: #4285f4;
+  background: #EFF6FF;
+  border-color: #4285F4;
 }
 
 .taller-details {
   padding: 0.25rem 1rem 0.85rem 2.65rem;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid #F0ECEA;
   animation: showDetails 0.18s ease-out;
 }
 
@@ -121,13 +122,13 @@
 }
 
 .detail-label {
-  color: #6b7280;
+  color: #77737B;
   font-size: 0.78rem;
   font-weight: 500;
 }
 
 .detail-value {
-  color: #1a1a1a;
+  color: #29272C;
   font-size: 0.9rem;
   overflow-wrap: anywhere;
 }
@@ -140,23 +141,23 @@
 }
 
 .btn-edit {
-  color: #d97706;
-  border-color: #fde68a;
+  color: #B94770;
+  border-color: #F0C6D4;
 }
 
 .btn-edit:hover {
-  background: #fffbeb;
-  border-color: #f59e0b;
+  background: #FFF1F5;
+  border-color: #C9587F;
 }
 
 .btn-delete {
-  color: #dc2626;
-  border-color: #fecaca;
+  color: #C43D57;
+  border-color: #F2C5CC;
 }
 
 .btn-delete:hover {
-  background: #fef2f2;
-  border-color: #ef4444;
+  background: #FFF0F2;
+  border-color: #C43D57;
 }
 
 @keyframes showDetails {
