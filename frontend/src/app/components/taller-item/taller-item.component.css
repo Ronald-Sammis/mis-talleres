@@ -2,68 +2,73 @@
 :host {
   display: block;
   width: 100%;
-  font-family: Inter, "Segoe UI", sans-serif;
+  font-family: "Kalam", "Comic Sans MS", cursive;
 }
 
+/* Entrada de la agenda */
 .taller-card {
-  background: #FFFFFF;
-  border: 1px solid #E7E4E0;
-  border-bottom: none;
+  position: relative;
+  background-color: #f8edc9;
+  background-image:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 37px,
+      rgba(105, 137, 166, 0.25) 38px,
+      transparent 39px
+    );
+  border: none;
+  border-bottom: 1px solid rgba(125, 103, 65, 0.22);
+  border-radius: 0;
+  box-shadow: none;
   transition: background-color 0.2s ease;
 }
 
-.talleres-list app-taller-item:last-child .taller-card {
-  border-bottom: 1px solid #E7E4E0;
-}
-
-.taller-card:first-child {
-  border-radius: 8px 8px 0 0;
-}
-
-.taller-card:last-child {
-  border-bottom: 1px solid #E7E4E0;
-  border-radius: 0 0 8px 8px;
-}
-
-.taller-card:only-child {
-  border-radius: 8px;
-}
-
+/* Entrada abierta */
 .taller-card.expanded {
-  background: #FDFBFC;
+  background-color: #fff2cf;
 }
 
+/* Fila principal */
 .taller-summary {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   min-height: 48px;
-  padding: 0.25rem 0.75rem;
+  padding: 0.3rem 0.75rem 0.3rem 0.9rem;
 }
 
+/* Nombre del taller y control para desplegar */
 .summary-toggle {
   display: flex;
   align-items: center;
   flex: 1;
   min-width: 0;
   gap: 0.65rem;
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
   border: none;
   background: transparent;
-  color: #171719;
+  color: #292317;
   text-align: left;
   cursor: pointer;
 }
 
-.summary-toggle:focus-visible,
-.action-btn:focus-visible {
-  outline: 2px solid #C9587F;
-  outline-offset: 2px;
+/* Viñeta de la agenda */
+.summary-toggle::before {
+  content: "";
+  flex-shrink: 0;
+  width: 9px;
+  height: 9px;
+  margin-right: 0.1rem;
+  border-radius: 50%;
+  background: #30251b;
+  box-shadow: 0 0 0 2px rgba(48, 37, 27, 0.08);
 }
 
+/* Flecha desplegable */
 .expand-icon {
   flex-shrink: 0;
-  color: #85838A;
+  color: #81704e;
   transition: transform 0.2s ease;
 }
 
@@ -71,6 +76,7 @@
   transform: rotate(90deg);
 }
 
+/* Nombre manuscrito */
 .taller-propietario {
   flex: 1;
   min-width: 0;
@@ -78,11 +84,14 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 0.98rem;
-  font-weight: 600;
-  color: #171719;
+  font-family: "Kalam", "Comic Sans MS", cursive;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.8;
+  color: #30251b;
 }
 
+/* Botones de acción */
 .action-btn {
   display: inline-flex;
   align-items: center;
@@ -95,22 +104,32 @@
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
 }
 
+.summary-toggle:focus-visible,
+.action-btn:focus-visible {
+  outline: 2px solid #8a6540;
+  outline-offset: 2px;
+}
+
+/* Google Maps */
 .btn-maps {
-  color: #4285F4;
-  border-color: #C7DDFB;
+  color: #356bb3;
+  border-color: rgba(53, 107, 179, 0.25);
 }
 
 .btn-maps:hover {
-  background: #EFF6FF;
-  border-color: #4285F4;
+  background: rgba(255, 255, 255, 0.55);
+  border-color: #356bb3;
 }
 
+/* Detalles del taller desplegado */
 .taller-details {
-  padding: 0.25rem 1rem 0.85rem 2.65rem;
-  border-top: 1px solid #F0ECEA;
+  padding: 0.35rem 1rem 0.85rem 2.65rem;
+  border-top: 1px dashed rgba(125, 103, 65, 0.35);
   animation: showDetails 0.18s ease-out;
 }
 
@@ -118,21 +137,27 @@
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
-  padding: 0.55rem 0;
+  padding: 0.4rem 0;
 }
 
 .detail-label {
-  color: #77737B;
-  font-size: 0.78rem;
-  font-weight: 500;
+  color: #796747;
+  font-family: Inter, "Segoe UI", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .detail-value {
-  color: #29272C;
-  font-size: 0.9rem;
+  color: #30251b;
+  font-family: "Kalam", "Comic Sans MS", cursive;
+  font-size: 1.05rem;
+  font-weight: 700;
   overflow-wrap: anywhere;
 }
 
+/* Acciones de editar y eliminar */
 .taller-actions {
   display: flex;
   justify-content: flex-end;
@@ -141,25 +166,26 @@
 }
 
 .btn-edit {
-  color: #B94770;
-  border-color: #F0C6D4;
+  color: #8e4b67;
+  border-color: rgba(142, 75, 103, 0.3);
 }
 
 .btn-edit:hover {
-  background: #FFF1F5;
-  border-color: #C9587F;
+  background: rgba(255, 255, 255, 0.55);
+  border-color: #8e4b67;
 }
 
 .btn-delete {
-  color: #C43D57;
-  border-color: #F2C5CC;
+  color: #b43d3d;
+  border-color: rgba(180, 61, 61, 0.3);
 }
 
 .btn-delete:hover {
-  background: #FFF0F2;
-  border-color: #C43D57;
+  background: rgba(255, 255, 255, 0.55);
+  border-color: #b43d3d;
 }
 
+/* Aparición suave de los detalles */
 @keyframes showDetails {
   from {
     opacity: 0;
@@ -172,14 +198,15 @@
   }
 }
 
+/* Adaptación a móviles */
 @media (max-width: 480px) {
   .taller-summary {
     min-height: 46px;
-    padding: 0.2rem 0.5rem;
+    padding: 0.2rem 0.5rem 0.2rem 0.6rem;
   }
 
   .taller-propietario {
-    font-size: 0.92rem;
+    font-size: 1.08rem;
   }
 
   .action-btn {
@@ -193,6 +220,7 @@
   }
 }
 
+/* Respeta la preferencia de reducir animaciones */
 @media (prefers-reduced-motion: reduce) {
   .expand-icon,
   .action-btn {
