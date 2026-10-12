@@ -5,7 +5,7 @@
   font-family: "Kalam", "Comic Sans MS", cursive;
 }
 
-/* Entrada de la agenda */
+/* Una entrada de agenda por renglón */
 .taller-card {
   position: relative;
   background-color: #f8edc9;
@@ -13,9 +13,9 @@
     repeating-linear-gradient(
       to bottom,
       transparent 0,
-      transparent 37px,
-      rgba(105, 137, 166, 0.25) 38px,
-      transparent 39px
+      transparent 47px,
+      rgba(105, 137, 166, 0.28) 48px,
+      transparent 49px
     );
   border: none;
   border-bottom: 1px solid rgba(125, 103, 65, 0.22);
@@ -24,28 +24,27 @@
   transition: background-color 0.2s ease;
 }
 
-/* Entrada abierta */
 .taller-card.expanded {
   background-color: #fff2cf;
 }
 
-/* Fila principal */
+/* Renglón principal: una sola línea */
 .taller-summary {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  min-height: 48px;
-  padding: 0.3rem 0.75rem 0.3rem 0.9rem;
+  min-height: 49px;
+  padding: 0 0.75rem 0 0.9rem;
 }
 
-/* Nombre del taller y control para desplegar */
+/* Área clicable del nombre */
 .summary-toggle {
   display: flex;
   align-items: center;
   flex: 1;
   min-width: 0;
-  gap: 0.65rem;
-  padding: 0.4rem 0;
+  gap: 0.55rem;
+  padding: 0;
   border: none;
   background: transparent;
   color: #292317;
@@ -53,19 +52,17 @@
   cursor: pointer;
 }
 
-/* Viñeta de la agenda */
+/* Viñeta negra */
 .summary-toggle::before {
   content: "";
   flex-shrink: 0;
-  width: 9px;
-  height: 9px;
-  margin-right: 0.1rem;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #30251b;
-  box-shadow: 0 0 0 2px rgba(48, 37, 27, 0.08);
 }
 
-/* Flecha desplegable */
+/* Flecha para desplegar */
 .expand-icon {
   flex-shrink: 0;
   color: #81704e;
@@ -76,7 +73,7 @@
   transform: rotate(90deg);
 }
 
-/* Nombre manuscrito */
+/* Nombre manuscrito en un solo renglón */
 .taller-propietario {
   flex: 1;
   min-width: 0;
@@ -85,9 +82,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   font-family: "Kalam", "Comic Sans MS", cursive;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  line-height: 1.8;
+  line-height: 1;
   color: #30251b;
 }
 
@@ -126,7 +123,7 @@
   border-color: #356bb3;
 }
 
-/* Detalles del taller desplegado */
+/* Detalles desplegables */
 .taller-details {
   padding: 0.35rem 1rem 0.85rem 2.65rem;
   border-top: 1px dashed rgba(125, 103, 65, 0.35);
@@ -185,7 +182,7 @@
   border-color: #b43d3d;
 }
 
-/* Aparición suave de los detalles */
+/* Aparición de los detalles */
 @keyframes showDetails {
   from {
     opacity: 0;
@@ -198,15 +195,19 @@
   }
 }
 
-/* Adaptación a móviles */
+/* Ajustes para móviles */
 @media (max-width: 480px) {
   .taller-summary {
-    min-height: 46px;
-    padding: 0.2rem 0.5rem 0.2rem 0.6rem;
+    min-height: 49px;
+    padding: 0 0.5rem 0 0.6rem;
+  }
+
+  .summary-toggle {
+    gap: 0.4rem;
   }
 
   .taller-propietario {
-    font-size: 1.08rem;
+    font-size: 1.05rem;
   }
 
   .action-btn {
