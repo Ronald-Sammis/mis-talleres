@@ -81,7 +81,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-family: "Kalam", "Comic Sans MS", cursive;
+  font-family: "Comic Sans MS", cursive;
   font-size: 1.15rem;
   font-weight: 700;
   line-height: 1;
@@ -195,10 +195,10 @@
   }
 }
 
-/* Ajustes para móviles */
+
 @media (max-width: 480px) {
   .taller-summary {
-    min-height: 49px;
+    min-height: 56px;
     padding: 0 0.5rem 0 0.6rem;
   }
 
@@ -207,19 +207,25 @@
   }
 
   .taller-propietario {
-    font-size: 1.05rem;
+    font-size: 1.3rem;
+    line-height: 1.2;
   }
 
   .action-btn {
-    width: 34px;
-    height: 34px;
+    width: 36px;
+    height: 36px;
   }
 
   .taller-details {
     padding-left: 2.25rem;
     padding-right: 0.75rem;
   }
+
+  .detail-value {
+    font-size: 1.15rem;
+  }
 }
+
 
 /* Respeta la preferencia de reducir animaciones */
 @media (prefers-reduced-motion: reduce) {
