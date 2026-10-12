@@ -8,12 +8,29 @@
   font-family: Inter, "Segoe UI", sans-serif;
 }
 
+/* Una sola página continua de agenda */
 .talleres-list {
   display: flex;
   flex-direction: column;
   gap: 0;
+  overflow: hidden;
+  background-color: #f8edc9;
+  border: 1px solid rgba(125, 103, 65, 0.28);
+  border-radius: 3px;
+  box-shadow:
+    0 3px 8px rgba(72, 55, 28, 0.08),
+    inset 0 0 25px rgba(180, 145, 75, 0.06);
 }
 
+/* Evita espacios entre las entradas */
+.talleres-list app-taller-item {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Encabezado VALE: conservado */
 .institutional-header {
   background: linear-gradient(135deg, #171719 0%, #302B32 100%);
   padding: 2rem;
@@ -21,12 +38,9 @@
   box-shadow: 0 4px 15px rgba(23, 23, 25, 0.18);
   border-bottom: 4px solid #ED86A7;
   margin-bottom: 2rem;
-
-  /* Cabecera fija al hacer scroll */
   position: sticky;
   top: 0;
   z-index: 999;
-  
 }
 
 .header-content {
@@ -141,12 +155,13 @@
 }
 
 .header-subtitle {
-  margin: 0.5rem 0 0 0;
+  margin: 0.5rem 0 0;
   color: #E9E3E7;
   font-size: 1rem;
   font-weight: 500;
 }
 
+/* Estado de carga */
 .loading {
   text-align: center;
   padding: 4rem 2rem;
@@ -169,6 +184,7 @@
   100% { transform: rotate(360deg); }
 }
 
+/* Estado de error */
 .error {
   background: #FFF0F2;
   color: #A92E49;
@@ -178,6 +194,7 @@
   border-left: 4px solid #C43D57;
 }
 
+/* Lista vacía */
 .empty-state {
   text-align: center;
   padding: 4rem 2rem;
@@ -192,13 +209,13 @@
 }
 
 .empty-state h2 {
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.5rem;
   color: #171719;
   font-size: 1.5rem;
 }
 
 .empty-state p {
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem;
   color: #77737B;
   font-size: 1.125rem;
 }
@@ -209,13 +226,7 @@
   box-shadow: 0 4px 15px rgba(23, 23, 25, 0.18);
 }
 
-.talleres-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-/* Floating Action Button (FAB) */
+/* Botón flotante para agregar */
 .fab {
   position: fixed;
   bottom: 2rem;
@@ -251,13 +262,13 @@
   line-height: 1;
 }
 
-/* Responsive Design */
+/* Adaptación a móviles */
 @media (max-width: 768px) {
   .list-container {
     padding: 1rem;
   }
 
-  h1 {
+  .header-text h1 {
     font-size: 2rem;
   }
 
@@ -278,8 +289,18 @@
     padding: 0.75rem;
   }
 
-  h1 {
+  .header-text h1 {
     font-size: 1.75rem;
+  }
+
+  .header-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 2.4rem;
+  }
+
+  .header-content {
+    gap: 0.85rem;
   }
 
   .fab {
