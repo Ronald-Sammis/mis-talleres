@@ -5,7 +5,7 @@ Aplicación web responsive para gestionar talleres, desarrollada con Spring Boot
 ## Tecnologías
 
 - **Backend**: Java 17+, Spring Boot 3.2.0
-- **Frontend**: Angular 17, TypeScript, Bootstrap 5 (Bootswatch Vapor)
+- **Frontend**: Angular 17, TypeScript, Bootstrap 5 (Bootswatch Pulse)
 - **Base de datos**: PostgreSQL 15+
 - **Build**: Maven (backend), npm/Angular CLI (frontend)
 
