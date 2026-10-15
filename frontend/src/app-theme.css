@@ -7,7 +7,7 @@
   --bs-link-color-rgb: 23, 23, 23;
   --bs-link-hover-color: #555;
   --bs-link-hover-color-rgb: 85, 85, 85;
-  --editorial-accent: #e8ff63;
+  --editorial-accent: #ffc629;
   --editorial-muted: #777;
   --editorial-rule: #d5d5d1;
 }
@@ -137,7 +137,7 @@ body {
 }
 
 .editorial-list .workshop-toggle:hover {
-  color: #59651c;
+  color: #9a6b00;
 }
 
 .editorial-icon-button {
@@ -171,7 +171,7 @@ body {
 
 .editorial-fab:hover,
 .editorial-fab:focus {
-  background: #d5ed49;
+  background: #ffd95a;
   color: #171717;
 }
 
