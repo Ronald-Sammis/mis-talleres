@@ -5,18 +5,10 @@
   font-family: "Comic Neue", sans-serif;
 }
 
-/* Una entrada de agenda por renglón */
+/* Tarjeta de taller */
 .taller-card {
   position: relative;
   background-color: #f8edc9;
-  background-image:
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 47px,
-      rgba(105, 137, 166, 0.28) 48px,
-      transparent 49px
-    );
   border: none;
   border-bottom: 1px solid rgba(125, 103, 65, 0.22);
   border-radius: 0;
