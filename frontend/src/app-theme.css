@@ -51,29 +51,6 @@ body {
   color: var(--editorial-muted);
 }
 
-.editorial-hero {
-  padding: clamp(2.5rem, 8vw, 7rem) 0 clamp(2rem, 5vw, 4rem);
-}
-
-.editorial-title {
-  margin: 0;
-  font-size: clamp(3.5rem, 11vw, 9.5rem);
-  font-weight: 700;
-  letter-spacing: -0.09em;
-  line-height: 0.82;
-}
-
-.editorial-title-accent {
-  color: #8c9c26;
-}
-
-.editorial-intro {
-  max-width: 34rem;
-  color: #626262;
-  font-size: clamp(1rem, 1.6vw, 1.25rem);
-  line-height: 1.5;
-}
-
 .editorial-search {
   max-width: 34rem;
 }
@@ -267,10 +244,6 @@ body {
 }
 
 @media (max-width: 575.98px) {
-  .editorial-title {
-    font-size: clamp(3.25rem, 18vw, 6rem);
-  }
-
   .editorial-list .list-group-item {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
