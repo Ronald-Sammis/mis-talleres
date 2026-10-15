@@ -37,7 +37,7 @@
   padding: 0;
   border: none;
   background: transparent;
-  color: #292317;
+  color: #173F73;
   text-align: left;
   cursor: pointer;
 }
@@ -49,13 +49,13 @@
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #30251b;
+  background: #173F73;
 }
 
 /* Flecha para desplegar */
 .expand-icon {
   flex-shrink: 0;
-  color: #81704e;
+  color: #42658B;
   transition: transform 0.2s ease;
 }
 
@@ -75,7 +75,7 @@
   font-size: 1.15rem;
   font-weight: 700;
   line-height: 1;
-  color: #30251b;
+  color: #173F73;
 }
 
 /* Botones de acción */
@@ -127,7 +127,7 @@
 }
 
 .detail-label {
-  color: #796747;
+  color: #42658B;
   font-family: Inter, "Segoe UI", sans-serif;
   font-size: 0.75rem;
   font-weight: 700;
@@ -136,7 +136,7 @@
 }
 
 .detail-value {
-  color: #30251b;
+  color: #173F73;
   font-family: "Kalam", "Comic Sans MS", cursive;
   font-size: 1.05rem;
   font-weight: 700;
