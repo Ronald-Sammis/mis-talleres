@@ -31,7 +31,7 @@
 }
 
 .institutional-header {
-  background: linear-gradient(135deg, #171719 0%, #302B32 100%);
+  background: radial-gradient(ellipse at 20% 20%, #B18A68, #88664B);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(23, 23, 25, 0.18);
