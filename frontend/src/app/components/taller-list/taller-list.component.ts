@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Taller } from '../../models/taller.model';
 import { TallerService } from '../../services/taller.service';
 import { Router } from '@angular/router';
@@ -9,12 +9,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./taller-list.component.css']
 })
 export class TallerListComponent implements OnInit {
-  @ViewChild('searchInput') searchInput?: ElementRef<HTMLInputElement>;
-
   talleres: Taller[] = [];
   loading = false;
   error: string | null = null;
-  searchOpen = false;
   searchQuery = '';
 
   constructor(
@@ -78,19 +75,8 @@ export class TallerListComponent implements OnInit {
     this.router.navigate(['/create']);
   }
 
-  openSearch(): void {
-    this.searchOpen = true;
-    setTimeout(() => this.searchInput?.nativeElement.focus(), 0);
-  }
-
-  closeSearch(): void {
-    this.searchOpen = false;
-    this.searchQuery = '';
-  }
-
   clearSearch(): void {
     this.searchQuery = '';
-    this.searchInput?.nativeElement.focus();
   }
 
   private normalize(value: string): string {
