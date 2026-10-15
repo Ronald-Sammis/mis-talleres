@@ -1,7 +1,14 @@
 <div class="form-container">
   <div class="form-header">
-    <div class="form-icon">🏭</div>
-    <h2>{{ isEditMode ? 'Editar Taller' : 'Nuevo Taller' }}</h2>
+    <div class="form-icon" aria-hidden="true">
+      <svg viewBox="0 0 64 64">
+        <path d="M7 5 25 13c4-2 10-2 14 0l18-8-4 23c-2 13-10 22-21 29-11-7-19-16-21-29L7 5Z" />
+      </svg>
+    </div>
+    <div class="form-heading">
+      <h2>{{ isEditMode ? 'Editar Taller' : 'Nuevo Taller' }}</h2>
+      <p>{{ isEditMode ? 'Actualiza la información del taller' : 'Agrega un taller a tu lista' }}</p>
+    </div>
   </div>
   
   <form [formGroup]="tallerForm" (ngSubmit)="onSubmit()">
