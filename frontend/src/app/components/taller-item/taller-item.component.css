@@ -5,19 +5,17 @@
   font-family: "Comic Neue", sans-serif;
 }
 
-/* Tarjeta de taller */
 .taller-card {
   position: relative;
-  background-color: #f8edc9;
+  background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgba(125, 103, 65, 0.22);
   border-radius: 0;
   box-shadow: none;
   transition: background-color 0.2s ease;
 }
 
 .taller-card.expanded {
-  background-color: #fff2cf;
+  background-color: rgba(255, 250, 232, 0.45);
 }
 
 /* Renglón principal: una sola línea */
@@ -118,7 +116,6 @@
 /* Detalles desplegables */
 .taller-details {
   padding: 0.35rem 1rem 0.85rem 2.65rem;
-  border-top: 1px dashed rgba(125, 103, 65, 0.35);
   animation: showDetails 0.18s ease-out;
 }
 

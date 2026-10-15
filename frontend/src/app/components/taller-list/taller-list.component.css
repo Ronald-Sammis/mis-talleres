@@ -8,21 +8,22 @@
   font-family: Inter, "Segoe UI", sans-serif;
 }
 
-/* Una sola página continua de agenda */
 .talleres-list {
   display: flex;
   flex-direction: column;
   gap: 0;
   overflow: hidden;
-  background-color: #f8edc9;
-  border: 1px solid rgba(125, 103, 65, 0.28);
-  border-radius: 3px;
+  background:
+    radial-gradient(ellipse at 12% 18%, rgba(152, 107, 49, 0.09), transparent 34%),
+    radial-gradient(ellipse at 84% 36%, rgba(255, 255, 255, 0.48), transparent 38%),
+    radial-gradient(ellipse at 65% 88%, rgba(132, 91, 45, 0.08), transparent 36%),
+    linear-gradient(135deg, #f7edcf, #f4e6bf);
+  border-radius: 6px;
   box-shadow:
     0 3px 8px rgba(72, 55, 28, 0.08),
-    inset 0 0 25px rgba(180, 145, 75, 0.06);
+    inset 0 0 32px rgba(125, 83, 35, 0.14);
 }
 
-/* Evita espacios entre las entradas */
 .talleres-list app-taller-item {
   display: block;
   width: 100%;
@@ -30,7 +31,6 @@
   padding: 0;
 }
 
-/* Encabezado VALE: conservado */
 .institutional-header {
   background: linear-gradient(135deg, #171719 0%, #302B32 100%);
   padding: 2rem;
@@ -155,7 +155,6 @@
   font-weight: 500;
 }
 
-/* Estado de carga */
 .loading {
   text-align: center;
   padding: 4rem 2rem;
@@ -178,7 +177,6 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Estado de error */
 .error {
   background: #FFF0F2;
   color: #A92E49;
@@ -188,7 +186,6 @@
   border-left: 4px solid #C43D57;
 }
 
-/* Lista vacía */
 .empty-state {
   text-align: center;
   padding: 4rem 2rem;
@@ -220,7 +217,6 @@
   box-shadow: 0 4px 15px rgba(23, 23, 25, 0.18);
 }
 
-/* Botón flotante para agregar */
 .fab {
   position: fixed;
   bottom: 2rem;
@@ -256,7 +252,6 @@
   line-height: 1;
 }
 
-/* Adaptación a móviles */
 @media (max-width: 768px) {
   .list-container {
     padding: 1rem;
