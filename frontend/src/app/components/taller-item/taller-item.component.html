@@ -1,19 +1,19 @@
-<article class="list-group-item bg-light">
+<article class="list-group-item">
   <div class="d-flex align-items-center gap-2">
     <button
       type="button"
-      class="btn btn-link link-primary text-decoration-none p-0 flex-grow-1 text-start d-flex align-items-center gap-2"
+      class="btn btn-link workshop-toggle text-decoration-none p-0 flex-grow-1 text-start d-flex align-items-center gap-3"
       (click)="toggleExpand()"
       [attr.aria-expanded]="expanded"
       [attr.aria-label]="(expanded ? 'Contraer ' : 'Desplegar ') + taller.propietario"
     >
-      <span class="text-body-secondary" aria-hidden="true">{{ expanded ? '▼' : '▶' }}</span>
-      <span class="fw-semibold fs-5 text-truncate">{{ taller.propietario }}</span>
+      <span class="editorial-section-label" aria-hidden="true">{{ expanded ? '−' : '+' }}</span>
+      <span class="fw-semibold fs-4 text-truncate">{{ taller.propietario }}</span>
     </button>
 
     <button
       type="button"
-      class="btn btn-outline-info btn-sm"
+      class="btn btn-outline-secondary btn-sm editorial-icon-button"
       (click)="openGoogleMaps()"
       title="Ver en Google Maps"
       aria-label="Ver ubicación en Google Maps"
@@ -50,7 +50,7 @@
     <div class="d-flex justify-content-end gap-2">
       <button
         type="button"
-        class="btn btn-outline-primary btn-sm"
+        class="btn btn-outline-secondary btn-sm editorial-icon-button"
         (click)="editTaller()"
         title="Editar taller"
         aria-label="Editar taller"
@@ -74,7 +74,7 @@
 
       <button
         type="button"
-        class="btn btn-outline-danger btn-sm"
+        class="btn btn-outline-secondary btn-sm editorial-icon-button"
         (click)="deleteTaller()"
         title="Eliminar taller"
         aria-label="Eliminar taller"
