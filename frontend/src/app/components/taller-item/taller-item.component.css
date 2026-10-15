@@ -155,13 +155,13 @@
 }
 
 .btn-edit {
-  color: #8e4b67;
-  border-color: rgba(142, 75, 103, 0.3);
+  color: #8A6100;
+  border-color: rgba(217, 155, 0, 0.35);
 }
 
 .btn-edit:hover {
-  background: rgba(255, 255, 255, 0.55);
-  border-color: #8e4b67;
+  background: rgba(255, 198, 41, 0.2);
+  border-color: #D99B00;
 }
 
 .btn-delete {

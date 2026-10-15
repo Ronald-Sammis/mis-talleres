@@ -36,7 +36,7 @@
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(23, 23, 25, 0.18);
-  border-bottom: 4px solid #ED86A7;
+  border-bottom: 4px solid #FFC629;
   margin-bottom: 2rem;
   position: sticky;
   top: 0;
@@ -72,7 +72,7 @@
 }
 
 .search-toggle:hover {
-  background: rgba(237, 134, 167, 0.22);
+  background: rgba(255, 198, 41, 0.22);
 }
 
 .header-search {
@@ -101,7 +101,7 @@
 
 .search-back:hover,
 .search-clear:hover {
-  background: rgba(237, 134, 167, 0.22);
+  background: rgba(255, 198, 41, 0.22);
 }
 
 .search-input {
@@ -118,8 +118,8 @@
 }
 
 .search-input:focus {
-  border-color: #C9587F;
-  box-shadow: 0 0 0 3px rgba(237, 134, 167, 0.18);
+  border-color: #D99B00;
+  box-shadow: 0 0 0 3px rgba(255, 198, 41, 0.2);
 }
 
 .search-input::placeholder {
@@ -134,8 +134,7 @@
 }
 
 .header-icon {
-  font-size: 3rem;
-  background: rgba(237, 134, 167, 0.13);
+  background: #FFC629;
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -143,7 +142,13 @@
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(237, 134, 167, 0.45);
+  border: 2px solid #FFD95A;
+}
+
+.header-icon svg {
+  width: 52px;
+  height: 52px;
+  fill: #171719;
 }
 
 .header-text h1 {
@@ -174,7 +179,7 @@
   height: 50px;
   margin: 0 auto 1rem;
   border: 3px solid #F0ECEA;
-  border-top: 3px solid #C9587F;
+  border-top: 3px solid #D99B00;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -200,7 +205,7 @@
   padding: 4rem 2rem;
   background: #F7F5F2;
   border-radius: 16px;
-  border: 2px dashed #E4B8C7;
+  border: 2px dashed #E5B419;
 }
 
 .empty-icon {
@@ -234,9 +239,9 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #ED86A7;
+  background: #FFC629;
   color: #171719;
-  border: 1px solid #D96D91;
+  border: 1px solid #D99B00;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(23, 23, 25, 0.18);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -247,7 +252,7 @@
 }
 
 .fab:hover {
-  background: #F2A1BA;
+  background: #FFD95A;
   transform: scale(1.1) rotate(90deg);
   box-shadow: 0 6px 25px rgba(23, 23, 25, 0.24);
 }

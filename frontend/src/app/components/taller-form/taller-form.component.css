@@ -8,7 +8,7 @@
   box-shadow: 0 4px 15px rgba(23, 23, 25, 0.07),
               0 2px 8px rgba(23, 23, 25, 0.04);
   border: 1px solid #E7E4E0;
-  border-top: 4px solid #ED86A7;
+  border-top: 4px solid #FFC629;
   font-family: Inter, "Segoe UI", sans-serif;
 }
 
@@ -83,9 +83,9 @@ label {
 
 .form-control:focus {
   outline: none;
-  border-color: #C9587F;
+  border-color: #D99B00;
   background: #FFFFFF;
-  box-shadow: 0 0 0 4px rgba(237, 134, 167, 0.18);
+  box-shadow: 0 0 0 4px rgba(255, 198, 41, 0.2);
 }
 
 .form-control::placeholder {
@@ -148,7 +148,7 @@ label {
 
 .btn-primary:hover:not(:disabled) {
   background: #302B32;
-  border-color: #C9587F;
+  border-color: #D99B00;
   transform: translateY(-2px);
   box-shadow: 0 6px 18px rgba(23, 23, 25, 0.2);
 }
@@ -173,7 +173,7 @@ label {
 
 .btn-secondary:hover {
   background: #F7F5F2;
-  border-color: #D8B1BF;
+  border-color: #E5B419;
   color: #171719;
 }
 
