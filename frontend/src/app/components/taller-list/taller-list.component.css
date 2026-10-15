@@ -11,7 +11,6 @@
 .talleres-list {
   display: flex;
   flex-direction: column;
-  gap: 0;
   overflow: hidden;
   background:
     radial-gradient(ellipse at center, transparent 48%, rgba(103, 65, 28, 0.22) 100%),
@@ -25,13 +24,14 @@
 
 .talleres-list app-taller-item {
   display: block;
-  width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .institutional-header {
-  background: radial-gradient(ellipse at 20% 20%, #B18A68, #88664B);
+  background:
+    repeating-linear-gradient(115deg, #ffffff18 0 1px, #50341e14 1px 2px, transparent 2px 4px),
+    radial-gradient(ellipse at 20% 20%, #B18A68, #88664B);
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(23, 23, 25, 0.18);
@@ -57,8 +57,6 @@
   flex: 0 1 320px;
   min-width: 220px;
   position: relative;
-  display: flex;
-  align-items: center;
 }
 
 .search-icon {
@@ -273,10 +271,6 @@
     margin-left: 0;
   }
 
-  .header-text h1 {
-    font-size: 2rem;
-  }
-
   .fab {
     bottom: 1.5rem;
     right: 1.5rem;
@@ -301,7 +295,6 @@
   .header-icon {
     width: 60px;
     height: 60px;
-    font-size: 2.4rem;
   }
 
   .header-content {
