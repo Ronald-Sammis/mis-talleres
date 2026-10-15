@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-taller-list',
-  templateUrl: './taller-list.component.html',
-  styleUrls: ['./taller-list.component.css']
+  templateUrl: './taller-list.component.html'
 })
 export class TallerListComponent implements OnInit {
   talleres: Taller[] = [];

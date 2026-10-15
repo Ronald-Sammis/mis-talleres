@@ -1,82 +1,92 @@
-<div class="list-container">
-  <div class="institutional-header">
-    <div class="header-content">
-      <div class="header-icon">
-        <svg viewBox="0 0 64 64" aria-hidden="true">
-          <path d="M7 5 25 13c4-2 10-2 14 0l18-8-4 23c-2 13-10 22-21 29-11-7-19-16-21-29L7 5Z" />
-        </svg>
-      </div>
-      <div class="header-text">
-        <h1>Mis Talleres</h1>
-        <p class="header-subtitle">Sistema de Gestión de Talleres</p>
-      </div>
-      <div class="header-search" role="search">
-        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-        </svg>
-        <input
-          type="text"
-          class="search-input"
-          [(ngModel)]="searchQuery"
-          placeholder="Buscar taller..."
-          aria-label="Buscar taller"
-          autocomplete="off"
-        />
-        <button
-          *ngIf="searchQuery"
-          type="button"
-          class="search-clear"
-          (click)="clearSearch()"
-          title="Limpiar"
-          aria-label="Limpiar búsqueda"
-        >
-          ✕
-        </button>
+<main class="container py-4">
+  <header class="card sticky-top mb-4 shadow-sm">
+    <div class="card-body">
+      <div class="d-flex flex-column flex-md-row align-items-md-center gap-3">
+        <div class="rounded-3 bg-primary-subtle text-primary-emphasis p-2 d-flex align-items-center justify-content-center align-self-start">
+          <svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true">
+            <path fill="currentColor" d="M7 5 25 13c4-2 10-2 14 0l18-8-4 23c-2 13-10 22-21 29-11-7-19-16-21-29L7 5Z" />
+          </svg>
+        </div>
+        <div class="flex-grow-1">
+          <h1 class="h2 mb-1">Mis Talleres</h1>
+          <p class="text-body-secondary mb-0">Sistema de Gestión de Talleres</p>
+        </div>
+        <div class="input-group flex-grow-1" role="search">
+          <span class="input-group-text" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" />
+            </svg>
+          </span>
+          <input
+            type="text"
+            class="form-control"
+            [(ngModel)]="searchQuery"
+            placeholder="Buscar taller..."
+            aria-label="Buscar taller"
+            autocomplete="off"
+          />
+          <button
+            *ngIf="searchQuery"
+            type="button"
+            class="btn btn-outline-secondary"
+            (click)="clearSearch()"
+            title="Limpiar búsqueda"
+            aria-label="Limpiar búsqueda"
+          >
+            ✕
+          </button>
+        </div>
       </div>
     </div>
+  </header>
+
+  <div *ngIf="loading" class="d-flex justify-content-center align-items-center gap-3 py-5" role="status">
+    <span class="spinner-border text-primary" aria-hidden="true"></span>
+    <span>Cargando talleres...</span>
   </div>
 
-  <div *ngIf="loading" class="loading">
-    <div class="loading-spinner"></div>
-    <p>Cargando talleres...</p>
-  </div>
-
-  <div *ngIf="error" class="error">
+  <div *ngIf="error" class="alert alert-danger" role="alert">
     {{ error }}
   </div>
 
-  <div *ngIf="!loading && !error">
-    <div *ngIf="talleres.length === 0" class="empty-state">
-      <div class="empty-icon" aria-hidden="true">
-        <svg viewBox="0 0 64 64">
-          <path d="M7 5 25 13c4-2 10-2 14 0l18-8-4 23c-2 13-10 22-21 29-11-7-19-16-21-29L7 5Z" />
-        </svg>
+  <section *ngIf="!loading && !error">
+    <div *ngIf="talleres.length === 0" class="card text-center my-4">
+      <div class="card-body py-5">
+        <div class="d-inline-flex rounded-3 bg-primary-subtle text-primary-emphasis p-2 mb-3">
+          <svg viewBox="0 0 64 64" width="48" height="48" aria-hidden="true">
+            <path fill="currentColor" d="M7 5 25 13c4-2 10-2 14 0l18-8-4 23c-2 13-10 22-21 29-11-7-19-16-21-29L7 5Z" />
+          </svg>
+        </div>
+        <h2 class="h4">No hay talleres registrados</h2>
+        <p class="text-body-secondary">Comienza agregando tu primer taller</p>
+        <button class="btn btn-primary" (click)="onCreateNew()">
+          + Agregar primer taller
+        </button>
       </div>
-      <h2>No hay talleres registrados</h2>
-      <p>Comienza agregando tu primer taller</p>
-      <button class="btn btn-primary empty-btn" (click)="onCreateNew()">
-        + Agregar Primer Taller
-      </button>
     </div>
 
-    <div *ngIf="talleres.length > 0 && talleresFiltrados.length === 0" class="search-empty">
-      <p>No se encontraron talleres</p>
+    <div *ngIf="talleres.length > 0 && talleresFiltrados.length === 0" class="alert alert-secondary text-center">
+      No se encontraron talleres
     </div>
 
-    <div *ngIf="talleres.length > 0 && talleresFiltrados.length > 0" class="talleres-list">
-     <app-taller-item
-    *ngFor="let taller of talleresFiltrados"
-    [taller]="taller"
-    [expanded]="taller.id === tallerExpandidoId"
-    (onToggleExpand)="toggleTaller($event)"
-    (onEdit)="onEdit($event)"
-    (onDelete)="onDelete($event)"
-  ></app-taller-item>
+    <div *ngIf="talleres.length > 0 && talleresFiltrados.length > 0" class="list-group shadow-sm">
+      <app-taller-item
+        *ngFor="let taller of talleresFiltrados"
+        [taller]="taller"
+        [expanded]="taller.id === tallerExpandidoId"
+        (onToggleExpand)="toggleTaller($event)"
+        (onEdit)="onEdit($event)"
+        (onDelete)="onDelete($event)"
+      ></app-taller-item>
     </div>
-  </div>
+  </section>
 
-  <!-- Floating Action Button (FAB) -->
-  <button class="fab" (click)="onCreateNew()" title="Agregar Nuevo Taller">
-    <span class="fab-icon">+</span>
+  <button
+    class="btn btn-primary btn-lg position-fixed bottom-0 end-0 m-4 rounded-circle shadow px-3 py-2"
+    (click)="onCreateNew()"
+    title="Agregar nuevo taller"
+    aria-label="Agregar nuevo taller"
+  >
+    <span class="fs-4 lh-1" aria-hidden="true">+</span>
   </button>
-</div>
+</main>

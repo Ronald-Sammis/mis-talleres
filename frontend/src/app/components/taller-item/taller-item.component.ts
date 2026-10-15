@@ -4,8 +4,7 @@ import { Taller } from '../../models/taller.model';
 
 @Component({
   selector: 'app-taller-item',
-  templateUrl: './taller-item.component.html',
-  styleUrls: ['./taller-item.component.css']
+  templateUrl: './taller-item.component.html'
 })
 export class TallerItemComponent {
   @Input() taller!: Taller;

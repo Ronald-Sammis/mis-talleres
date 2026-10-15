@@ -1,37 +1,19 @@
-
-<div class="taller-card" [class.expanded]="expanded">
-  <div class="taller-summary">
+<article class="list-group-item">
+  <div class="d-flex align-items-center gap-2">
     <button
       type="button"
-      class="summary-toggle"
+      class="btn btn-link link-primary text-decoration-none p-0 flex-grow-1 text-start d-flex align-items-center gap-2"
       (click)="toggleExpand()"
       [attr.aria-expanded]="expanded"
       [attr.aria-label]="(expanded ? 'Contraer ' : 'Desplegar ') + taller.propietario"
     >
-      <svg
-        class="expand-icon"
-        [class.rotated]="expanded"
-        viewBox="0 0 24 24"
-        width="18"
-        height="18"
-        aria-hidden="true"
-      >
-        <path
-          d="m9 18 6-6-6-6"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
-
-      <span class="taller-propietario">{{ taller.propietario }}</span>
+      <span class="text-body-secondary" aria-hidden="true">{{ expanded ? '▼' : '▶' }}</span>
+      <span class="fw-semibold fs-5 text-truncate">{{ taller.propietario }}</span>
     </button>
 
     <button
       type="button"
-      class="action-btn btn-maps"
+      class="btn btn-outline-info btn-sm"
       (click)="openGoogleMaps()"
       title="Ver en Google Maps"
       aria-label="Ver ubicación en Google Maps"
@@ -54,24 +36,21 @@
     </button>
   </div>
 
-  <div class="taller-details" *ngIf="expanded">
-    <div class="detail-item">
-      <span class="detail-label">Dirección</span>
-      <span class="detail-value">{{ taller.direccion }}</span>
+  <div *ngIf="expanded" class="border-top mt-3 pt-3 ms-md-4">
+    <div class="mb-3">
+      <div class="small text-body-secondary fw-semibold text-uppercase">Dirección</div>
+      <div class="text-break">{{ taller.direccion }}</div>
     </div>
 
-    <div
-      class="detail-item"
-      *ngIf="taller.telefono && taller.telefono.trim()"
-    >
-      <span class="detail-label">Teléfono</span>
-      <span class="detail-value">{{ taller.telefono }}</span>
+    <div *ngIf="taller.telefono && taller.telefono.trim()" class="mb-3">
+      <div class="small text-body-secondary fw-semibold text-uppercase">Teléfono</div>
+      <div>{{ taller.telefono }}</div>
     </div>
 
-    <div class="taller-actions">
+    <div class="d-flex justify-content-end gap-2">
       <button
         type="button"
-        class="action-btn btn-edit"
+        class="btn btn-outline-primary btn-sm"
         (click)="editTaller()"
         title="Editar taller"
         aria-label="Editar taller"
@@ -95,7 +74,7 @@
 
       <button
         type="button"
-        class="action-btn btn-delete"
+        class="btn btn-outline-danger btn-sm"
         (click)="deleteTaller()"
         title="Eliminar taller"
         aria-label="Eliminar taller"
@@ -118,4 +97,4 @@
       </button>
     </div>
   </div>
-</div>
+</article>

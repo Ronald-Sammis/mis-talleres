@@ -6,8 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-taller-form',
-  templateUrl: './taller-form.component.html',
-  styleUrls: ['./taller-form.component.css']
+  templateUrl: './taller-form.component.html'
 })
 export class TallerFormComponent implements OnInit {
   tallerForm!: FormGroup;
