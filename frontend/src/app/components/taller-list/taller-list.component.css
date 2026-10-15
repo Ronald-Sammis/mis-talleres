@@ -69,6 +69,11 @@
   height: 20px;
   fill: #77737B;
   pointer-events: none;
+  transition: fill 0.25s ease;
+}
+
+.header-search:focus-within .search-icon {
+  fill: #D99B00;
 }
 
 .search-clear {
@@ -104,6 +109,7 @@
   color: #171719;
   background: #FFFFFF;
   outline: none;
+  transition: box-shadow 0.25s ease;
 }
 
 .search-input:focus {
@@ -320,5 +326,12 @@
 
   .empty-icon {
     font-size: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-icon,
+  .search-input {
+    transition: none;
   }
 }
