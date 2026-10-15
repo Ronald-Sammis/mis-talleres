@@ -39,12 +39,12 @@
   <div *ngIf="expanded" class="border-top mt-3 pt-3 ms-md-4">
     <div class="mb-3">
       <div class="small text-body-secondary fw-semibold text-uppercase">Dirección</div>
-      <div class="text-break">{{ taller.direccion }}</div>
+      <div class="editorial-detail-value text-break">{{ taller.direccion }}</div>
     </div>
 
     <div *ngIf="taller.telefono && taller.telefono.trim()" class="mb-3">
       <div class="small text-body-secondary fw-semibold text-uppercase">Teléfono</div>
-      <div>{{ taller.telefono }}</div>
+      <div class="editorial-detail-value">{{ taller.telefono }}</div>
     </div>
 
     <div class="d-flex justify-content-end gap-2">
