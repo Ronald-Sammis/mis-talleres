@@ -14,14 +14,13 @@
   gap: 0;
   overflow: hidden;
   background:
-    radial-gradient(ellipse at 12% 18%, rgba(152, 107, 49, 0.09), transparent 34%),
-    radial-gradient(ellipse at 84% 36%, rgba(255, 255, 255, 0.48), transparent 38%),
-    radial-gradient(ellipse at 65% 88%, rgba(132, 91, 45, 0.08), transparent 36%),
+    radial-gradient(ellipse at center, transparent 48%, rgba(103, 65, 28, 0.22) 100%),
+    radial-gradient(ellipse at 25% 20%, rgba(255, 255, 255, 0.32), transparent 55%),
     linear-gradient(135deg, #f7edcf, #f4e6bf);
   border-radius: 6px;
   box-shadow:
     0 3px 8px rgba(72, 55, 28, 0.08),
-    inset 0 0 32px rgba(125, 83, 35, 0.14);
+    inset 0 0 32px rgba(125, 83, 35, 0.2);
 }
 
 .talleres-list app-taller-item {
