@@ -31,9 +31,8 @@
   flex: 0 0 68px;
   background: linear-gradient(145deg, #FFD95A, #FFC629);
   border: 1px solid #E5B419;
-  border-radius: 20px;
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
   box-shadow: 0 7px 16px rgba(217, 155, 0, 0.2);
-  transform: rotate(-3deg);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -262,7 +261,6 @@ label {
     width: 56px;
     height: 56px;
     flex-basis: 56px;
-    border-radius: 16px;
   }
 
   .form-icon svg {

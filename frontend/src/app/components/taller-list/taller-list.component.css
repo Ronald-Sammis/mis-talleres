@@ -125,17 +125,20 @@
   background: #FFC629;
   width: 80px;
   height: 80px;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(10px);
-  border: 2px solid #FFD95A;
 }
 
-.header-icon svg {
-  width: 52px;
-  height: 52px;
+.header-icon,
+.empty-icon {
+  clip-path: polygon(25% 0, 75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+}
+
+.header-icon svg,
+.empty-icon svg {
+  width: 72%;
+  height: 72%;
   fill: #171719;
 }
 
@@ -194,8 +197,12 @@
 }
 
 .empty-icon {
-  font-size: 4rem;
+  display: grid;
+  place-items: center;
+  width: 72px;
+  height: 72px;
   margin-bottom: 1rem;
+  background: #FFC629;
 }
 
 .empty-state h2 {
@@ -313,6 +320,7 @@
   }
 
   .empty-icon {
-    font-size: 3rem;
+    width: 60px;
+    height: 60px;
   }
 }
